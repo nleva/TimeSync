@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="Sync">
+	<inherits name="com.google.gwt.user.User" />
+	<inherits name="ru.sendto.gwt.Html" />
+	<inherits name="ru.sendto.gwt.client.Bus" />
+	<inherits name="ru.sendto.DtoCommon" />
+	<inherits name="ru.sendto.Dto" />
+	<inherits name="ru.sendto.rest.UniversalRest" />
+	<entry-point class="ru.sendto.gwt.client.Sync" />
+	<source path="gwt/client" />
+	<set-property name="user.agent" value="safari"/>
+</module>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+    <artifactId>TimeSync</artifactId>
+    <groupId>ru.send-to</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+    <artifactId>TimeSync-ejb</artifactId>
+    <packaging>ejb</packaging>
+
+    <name>TimeSync-ejb</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+    <dependencies>
+    
+		<dependency>
+			<groupId>ru.send-to.dto</groupId>
+			<artifactId>DtoCommon</artifactId>
+			<scope>provided</scope>
+			<type>jar</type>
+		</dependency>
+    	<dependency>
+            <groupId>ru.send-to</groupId>
+            <artifactId>TimeSync-dto</artifactId>
+            <scope>provided</scope>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+        	<groupId>ru.send-to.rest</groupId>
+        	<artifactId>UniversalRest-api</artifactId>
+        	<scope>provided</scope>
+        	<type>jar</type>
+        </dependency>
+        <dependency>
+        	<groupId>ru.send-to.ejb</groupId>
+        	<artifactId>EjbContext</artifactId>
+        	<scope>provided</scope>
+        	<type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+			<plugin>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<ejbVersion>3.2</ejbVersion>
+				</configuration>
+			</plugin>
+            
+        </plugins>
+    </build>
+
+</project>

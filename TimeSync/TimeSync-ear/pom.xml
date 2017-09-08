@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>TimeSync</artifactId>
+		<groupId>ru.send-to</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>TimeSync-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<name>TimeSync-ear</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>ru.send-to</groupId>
+			<artifactId>TimeSync-dto</artifactId>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>ru.send-to</groupId>
+			<artifactId>TimeSync-ejb</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>ru.send-to.ejb</groupId>
+			<artifactId>EjbContext</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>ru.send-to</groupId>
+			<artifactId>TimeSync-web-static</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>ru.send-to.rest</groupId>
+			<artifactId>UniversalRest-websocket</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>ru.send-to.rest</groupId>
+			<artifactId>UniversalRest-api</artifactId>
+			<type>jar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>ru.send-to.websocket</groupId>
+			<artifactId>CDIEndpoint</artifactId>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>ru.send-to.dto</groupId>
+			<artifactId>DtoCommon</artifactId>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<type>jar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<type>jar</type>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<type>jar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.fusesource.restygwt</groupId>
+			<artifactId>restygwt</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<version>7</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<webModule>
+							<groupId>ru.send-to</groupId>
+							<artifactId>TimeSync-web-static</artifactId>
+							<contextRoot>/</contextRoot>
+						</webModule>
+						<webModule>
+							<groupId>ru.send-to.rest</groupId>
+							<artifactId>UniversalRest-websocket</artifactId>
+							<contextRoot>/ws</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
