@@ -7,10 +7,19 @@ import java.util.TreeSet;
 import com.google.gwt.core.client.Scheduler;
 
 import ru.sendto.dto.TimeSyncDto;
+import ru.sendto.gwt.client.html.Log;
 import ru.sendto.gwt.client.util.Bus;
 import ru.sendto.rest.gwt.Websocket;
 
-public class Sync  {
+public class Sync {
+
+	public static native String getTsUrl()/*-{
+		return $wnd.tsUrl;
+	}-*/;
+
+	public static native void setTsUrl(String url)/*-{
+		return $wnd.tsUrl = url;
+	}-*/;
 
 	public static void init() {
 		Scheduler.get().scheduleFixedPeriod(Sync::sendRequest, 1000);
@@ -18,6 +27,7 @@ public class Sync  {
 	}
 
 	static int max = 10;
+
 	private static boolean sendRequest() {
 		Websocket.send(new TimeSyncDto().setClient(new Date().getTime()));
 		return max-- > 0;
@@ -25,22 +35,24 @@ public class Sync  {
 
 	static Set<Integer> delta = new TreeSet<>();
 
-	{Bus.get().listen(TimeSyncDto.class, Sync::setSync);}
+	static {Bus.get().listen(TimeSyncDto.class, Sync::setSync);}
 	static void setSync(TimeSyncDto dto) {
 		long clientTs = new Date().getTime();
 		long requestDuration = clientTs - dto.getClient();
-		long serverTimeShift = dto.getServer() + requestDuration / 2 - clientTs;
-		delta.add(((int)serverTimeShift));
+		long serverTimeShift =  dto.getServer() + requestDuration / 2 - clientTs; 
+		// serverTime = ClientTime-duration/2 + serverTimeShift
+		// clientTime = serverTime 
+		delta.add(((int) serverTimeShift));
 		Object[] results = delta.toArray();
-		Integer c = ((Integer)results[results.length/2]);
+		Integer c = ((Integer) results[results.length / 2]);
 		setServerTimeShift(c);
 	}
 
-	static native void setServerTimeShift(int shift)/*-{
+	public static native void setServerTimeShift(int shift)/*-{
 		$wnd.serverTimeShift = shift;
 	}-*/;
 
-	static native int getserverTimeShift()/*-{
+	public static native int getserverTimeShift()/*-{
 		return $wnd.serverTimeShift;
 	}-*/;
 

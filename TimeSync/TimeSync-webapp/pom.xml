@@ -99,6 +99,11 @@
 									<filtering>true</filtering>
 									<include>META-INF/resources/**</include>
 								</resource>
+								<resource>
+									<directory>${project.basedir}/src/main/java</directory>
+									<filtering>true</filtering>
+									<include>**</include>
+								</resource>
 							</resources>
 						</configuration>
 					</execution>

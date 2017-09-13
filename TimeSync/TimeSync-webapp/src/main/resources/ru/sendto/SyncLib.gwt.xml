@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="Sync">
+	<inherits name="com.google.gwt.user.User" />
+	<inherits name="ru.sendto.gwt.Html" />
+	<inherits name="ru.sendto.gwt.client.Bus" />
+	<inherits name="ru.sendto.DtoCommon" />
+	<inherits name="ru.sendto.Dto" />
+	<inherits name="ru.sendto.rest.UniversalRest" />
+	<source path="gwt/client" />
+</module>

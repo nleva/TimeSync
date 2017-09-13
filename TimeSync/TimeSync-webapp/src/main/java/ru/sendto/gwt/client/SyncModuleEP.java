@@ -9,8 +9,14 @@ public class SyncModuleEP implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
-		Websocket.init(GWT.getHostPageBaseURL() + "tsync");
+		String url = Sync.getTsUrl();
+		if(url==null)
+			url="tsync";
+		Websocket.init(GWT.getHostPageBaseURL() + url);
 		Sync.init();
 	}
+	
+	
+
 
 }
