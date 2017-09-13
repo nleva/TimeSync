@@ -6,7 +6,7 @@
 	<inherits name="ru.sendto.DtoCommon" />
 	<inherits name="ru.sendto.Dto" />
 	<inherits name="ru.sendto.rest.UniversalRest" />
-	<entry-point class="ru.sendto.gwt.client.Sync" />
+	<entry-point class="ru.sendto.gwt.client.SyncModuleEP" />
 	<source path="gwt/client" />
 	<set-property name="user.agent" value="safari"/>
 </module>

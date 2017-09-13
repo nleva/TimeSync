@@ -107,12 +107,12 @@
 						<webModule>
 							<groupId>ru.send-to</groupId>
 							<artifactId>TimeSync-web-static</artifactId>
-							<contextRoot>/</contextRoot>
+							<contextRoot>/ts</contextRoot>
 						</webModule>
 						<webModule>
 							<groupId>ru.send-to.rest</groupId>
 							<artifactId>UniversalRest-websocket</artifactId>
-							<contextRoot>/ws</contextRoot>
+							<contextRoot>/tsync</contextRoot>
 						</webModule>
 					</modules>
 				</configuration>
