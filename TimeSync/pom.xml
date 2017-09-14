@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>ru.send-to</groupId>
 	<artifactId>TimeSync</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>TimeSync</name>
 
@@ -20,25 +20,25 @@
 			<dependency>
 				<groupId>ru.send-to</groupId>
 				<artifactId>TimeSync-dto</artifactId>
-				<version>0.0.1</version>
+				<version>0.0.2-SNAPSHOT</version>
 				<type>jar</type>
 			</dependency>
 			<dependency>
 				<groupId>ru.send-to</groupId>
 				<artifactId>TimeSync-ejb</artifactId>
-				<version>0.0.1</version>
+				<version>0.0.2-SNAPSHOT</version>
 				<type>ejb</type>
 			</dependency>
 			<dependency>
 				<groupId>ru.send-to</groupId>
 				<artifactId>TimeSync-web-static</artifactId>
-				<version>0.0.1</version>
+				<version>0.0.2-SNAPSHOT</version>
 				<type>war</type>
 			</dependency>
 			<dependency>
 				<groupId>ru.send-to</groupId>
 				<artifactId>TimeSync-webapp</artifactId>
-				<version>0.0.1</version>
+				<version>0.0.2-SNAPSHOT</version>
 				<type>jar</type>
 			</dependency>
 			<dependency>
@@ -64,6 +64,6 @@
 		<url>https://github.com/nleva/${repo}</url>
 		<connection>scm:git:https://github.com/nleva/${repo}.git</connection>
 		<developerConnection>scm:git:https://github.com/nleva/${repo}.git</developerConnection>
-		<tag>TimeSync-0.0.1</tag>
+		<tag>HEAD</tag>
 	</scm>
 </project>
