@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>ru.send-to.versionManagement</groupId>
@@ -12,6 +13,9 @@
 	<packaging>pom</packaging>
 	<name>TimeSync</name>
 
+	<properties>
+		<repo>${project.artifactId}</repo>
+	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -44,14 +48,23 @@
 				<version>3.9</version>
 				<type>jar</type>
 			</dependency>
-			
+
 		</dependencies>
 	</dependencyManagement>
-  <modules>
-    <module>TimeSync-ear</module>
-    <module>TimeSync-dto</module>
-    <module>TimeSync-ejb</module>
-    <module>TimeSync-web-static</module>
-    <module>TimeSync-webapp</module>
-  </modules>
+
+	<modules>
+		<module>TimeSync-ear</module>
+		<module>TimeSync-dto</module>
+		<module>TimeSync-ejb</module>
+		<module>TimeSync-web-static</module>
+		<module>TimeSync-webapp</module>
+	</modules>
+	
+	<url>https://github.com/nleva/${repo}</url>
+	<scm>
+		<url>https://github.com/nleva/${repo}</url>
+		<connection>scm:git:https://github.com/nleva/${repo}.git</connection>
+		<developerConnection>scm:git:https://github.com/nleva/${repo}.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 </project>
