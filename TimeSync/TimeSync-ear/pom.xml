@@ -107,7 +107,7 @@
 						<webModule>
 							<groupId>ru.send-to</groupId>
 							<artifactId>TimeSync-web-static</artifactId>
-							<contextRoot>/ts</contextRoot>
+							<contextRoot>/</contextRoot>
 						</webModule>
 						<webModule>
 							<groupId>ru.send-to.rest</groupId>
