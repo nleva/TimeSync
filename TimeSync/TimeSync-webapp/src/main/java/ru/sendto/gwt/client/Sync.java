@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.google.gwt.core.client.Scheduler;
+
 import ru.sendto.dto.TimeSyncDto;
 import ru.sendto.gwt.client.util.Bus;
 import ru.sendto.rest.gwt.Websocket;
@@ -19,15 +21,33 @@ public class Sync {	private Sync() {}
 		return $wnd.tsUrl = url;
 	}-*/;
 
+	/**
+	 * init sync 
+	 */
 	public static void init() {
 		sendRequest();
 	}
+	/**
+	 * init sync 
+	 * @param max - requests count
+	 */
 	public static void init(int max) {
 		Sync.max=max;
 		init();
 	}
+	/**
+	 * init sync 
+	 * @param max - requests count
+	 * @param delay - pause between requests
+	 */
+	public static void init(int max, int delay) {
+		Sync.max=max;
+		Sync.delay=delay;
+		init();
+	}
 
 	static int max = 20;
+	static int delay = 100;
 
 	private static boolean sendRequest() {
 		Websocket.send(new TimeSyncDto().setClient(new Date().getTime()));
@@ -68,8 +88,14 @@ public class Sync {	private Sync() {}
 			setServerPing(mid.duration);
 			
 		}
-		if(max>0)
-			sendRequest();
+
+		if(max>0) {
+			if(delay==0) {
+				sendRequest();
+			}else {
+				Scheduler.get().scheduleFixedDelay(()->{sendRequest();return false;}, delay);
+			}
+		}
 	}
 
 	public static native void setServerTimeShift(int shift)/*-{
