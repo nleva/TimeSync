@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>TimeSync</artifactId>
 		<groupId>ru.send-to</groupId>
-		<version>0.0.4-SNAPSHOT</version>
+		<version>0.0.4</version>
 	</parent>
 
 	<artifactId>TimeSync-ear</artifactId>
@@ -125,6 +125,6 @@
 		<url>https://github.com/nleva/${repo}</url>
 		<connection>scm:git:https://github.com/nleva/${repo}.git</connection>
 		<developerConnection>scm:git:https://github.com/nleva/${repo}.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>TimeSync-0.0.4</tag>
 	</scm>
 </project>
