@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>ru.send-to.versionManagement</groupId>
 		<artifactId>LibsManagement</artifactId>
-		<version>0.5</version>
+		<version>0.7</version>
 	</parent>
 	<groupId>ru.send-to</groupId>
 	<artifactId>TimeSync</artifactId>
