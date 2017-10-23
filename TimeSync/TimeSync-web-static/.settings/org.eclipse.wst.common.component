@@ -2,10 +2,10 @@
     <wb-module deploy-name="TimeSync-web-static-0.0.2-SNAPSHOT">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-        <dependent-module archiveName="TimeSync-webapp-0.0.2-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/TimeSync-webapp/TimeSync-webapp">
+        <dependent-module archiveName="TimeSync-webapp-0.0.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/TimeSync-webapp/TimeSync-webapp">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="TimeSync-dto-0.0.2-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/TimeSync-dto/TimeSync-dto">
+        <dependent-module archiveName="TimeSync-dto-0.0.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/TimeSync-dto/TimeSync-dto">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path" value="/NewProject-web-static/target/classes"/>

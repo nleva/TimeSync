@@ -5,15 +5,12 @@ import java.util.Date;
 import java.util.Set;
 import java.util.TreeSet;
 
-import com.google.gwt.core.client.Scheduler;
-
 import ru.sendto.dto.TimeSyncDto;
-import ru.sendto.gwt.client.html.Log;
 import ru.sendto.gwt.client.util.Bus;
 import ru.sendto.rest.gwt.Websocket;
 
-public class Sync {
-
+public class Sync {	private Sync() {}
+	
 	public static native String getTsUrl()/*-{
 		return $wnd.tsUrl;
 	}-*/;
@@ -23,8 +20,11 @@ public class Sync {
 	}-*/;
 
 	public static void init() {
-		Scheduler.get().scheduleFixedPeriod(Sync::sendRequest, 300);
 		sendRequest();
+	}
+	public static void init(int max) {
+		Sync.max=max;
+		init();
 	}
 
 	static int max = 20;
@@ -68,6 +68,8 @@ public class Sync {
 			setServerPing(mid.duration);
 			
 		}
+		if(max>0)
+			sendRequest();
 	}
 
 	public static native void setServerTimeShift(int shift)/*-{

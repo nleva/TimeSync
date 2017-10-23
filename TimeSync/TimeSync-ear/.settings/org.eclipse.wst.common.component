@@ -2,25 +2,25 @@
     <wb-module deploy-name="TimeSync-ear-0.0.2-SNAPSHOT">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
-        <dependent-module archiveName="TimeSync-web-static-0.0.2-SNAPSHOT.war" deploy-path="/" handle="module:/resource/TimeSync-web-static/TimeSync-web-static">
+        <dependent-module archiveName="TimeSync-web-static-0.0.3-SNAPSHOT.war" deploy-path="/" handle="module:/resource/TimeSync-web-static/TimeSync-web-static">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="UniversalRest-websocket-0.3.2.1.war" deploy-path="/" handle="module:/classpath/var/M2_REPO/ru/send-to/rest/UniversalRest-websocket/0.3.2.1/UniversalRest-websocket-0.3.2.1.war">
+        <dependent-module archiveName="UniversalRest-websocket-0.3.2.2.war" deploy-path="/" handle="module:/classpath/var/M2_REPO/ru/send-to/rest/UniversalRest-websocket/0.3.2.2/UniversalRest-websocket-0.3.2.2.war">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="TimeSync-dto-0.0.2-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/TimeSync-dto/TimeSync-dto">
+        <dependent-module archiveName="TimeSync-dto-0.0.3-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/TimeSync-dto/TimeSync-dto">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="lombok-1.16.18.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/projectlombok/lombok/1.16.18/lombok-1.16.18.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="TimeSync-ejb-0.0.2-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/TimeSync-ejb/TimeSync-ejb">
+        <dependent-module archiveName="TimeSync-ejb-0.0.3-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/TimeSync-ejb/TimeSync-ejb">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="EjbContext-0.3.2.0.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/ru/send-to/ejb/EjbContext/0.3.2.0/EjbContext-0.3.2.0.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="UniversalRest-api-0.3.2.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/ru/send-to/rest/UniversalRest-api/0.3.2.1/UniversalRest-api-0.3.2.1.jar">
+        <dependent-module archiveName="UniversalRest-api-0.3.2.2.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/ru/send-to/rest/UniversalRest-api/0.3.2.2/UniversalRest-api-0.3.2.2.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="javaee-web-api-7.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar">
